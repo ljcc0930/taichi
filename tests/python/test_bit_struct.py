@@ -36,6 +36,7 @@ def test_simple_array():
     verify_val.__wrapped__()
 
 
+# TODO: remove excluding of ti.metal
 @ti.test(require=ti.extension.quant_basic, exclude=[ti.metal], debug=True)
 def test_custom_int_load_and_store():
     ci13 = ti.quant.int(13, True)

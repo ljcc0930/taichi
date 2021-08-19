@@ -3,6 +3,7 @@ from pytest import approx
 import taichi as ti
 
 
+# TODO: remove excluding of ti.metal.
 @ti.test(require=ti.extension.quant_basic, exclude=[ti.metal], debug=True)
 def test_custom_int_atomics():
     ci13 = ti.quant.int(13, True)
