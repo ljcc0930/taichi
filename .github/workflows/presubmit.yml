@@ -280,6 +280,7 @@ jobs:
 jobs:
   build_and_test_cpu:
     name: Build and Test (Apple M1)
+    needs: check_code_format
     strategy:
       matrix:
         include:
@@ -287,7 +288,7 @@ jobs:
             python: 3.8
             with_cc: OFF
             with_cpp_tests: ON
-    runs-on: m1
+    runs-on: [self-hosted, m1]
     steps:
       - uses: actions/checkout@v2
         with:
