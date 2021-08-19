@@ -277,7 +277,6 @@ jobs:
         env:
           PYTHON: C:\hostedtoolcache\windows\Python\3.7.9\x64\python.exe
 
-jobs:
   build_and_test_cpu:
     name: Build and Test (Apple M1)
     needs: check_code_format
@@ -296,6 +295,7 @@ jobs:
 
       - name: Build
         run: |
+          arch -arm64 python3 -m pip uninstall taichi
           git --version
           export CXX=clang++
           arch -arm64 python3 -m pip install -r requirements_dev.txt
