@@ -277,7 +277,7 @@ jobs:
         env:
           PYTHON: C:\hostedtoolcache\windows\Python\3.7.9\x64\python.exe
 
-  build_and_test_cpu:
+  build_and_test_m1:
     name: Build and Test (Apple M1)
     needs: check_code_format
     strategy:
